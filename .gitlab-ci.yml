@@ -1,0 +1,16 @@
+before_script:
+  - python --version
+
+stages:
+  - test
+
+run_tests:
+  image: "python:3.9"
+  stage: test
+  script:
+    - python -m pip install -U tox virtualenv
+    - tox --notest -p auto --parallel-live
+    - tox
+  tags:
+    - stage
+    - docker

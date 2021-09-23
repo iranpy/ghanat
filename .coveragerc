@@ -1,0 +1,12 @@
+[run]
+branch = True
+source = .
+omit =
+    */.venv/*
+    */.env/*
+    */env/*
+
+[coverage:report]
+show_missing = True
+[report]
+include = ghanat/*, tests/*
